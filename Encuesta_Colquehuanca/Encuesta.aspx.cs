@@ -32,6 +32,9 @@ namespace Encuesta_Colquehuanca
                 txtPorcentajeWeb.Text = "0";
                 txtPorcentajeBaseDatos.Text = "0";
                 txtPorcentajeIngles.Text = "0";
+
+                
+                //list[0]
             }
             
         }
@@ -39,6 +42,13 @@ namespace Encuesta_Colquehuanca
         
         protected void btnVotar_Click(object sender, EventArgs e)
         {
+             List<TextBox> milista = new List<TextBox>();
+            milista.Add(txtPorcentajeRedes);
+            milista.Add(txtPorcentajeWeb);
+            milista.Add(txtPorcentajeBaseDatos);
+            milista.Add(txtPorcentajeIngles);
+            
+            //milista[0].Text = "2";
             if (rbtnListCursos.Items[0].Selected == true)
             {
                 txtVotosRedes.Text = (Int32.Parse(txtVotosRedes.Text) + 1).ToString();
@@ -69,6 +79,8 @@ namespace Encuesta_Colquehuanca
                                         float.Parse(txtPorcentajeWeb.Text) + 
                                         float.Parse(txtPorcentajeBaseDatos.Text) +
                                         float.Parse(txtPorcentajeIngles.Text)).ToString("0");
+
+            
         }
     }
 }
